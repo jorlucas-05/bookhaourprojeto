@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Tela de Login</title>
+<style>
+body {
+  background-image: url("https://on-desktop.com/wps/Creative_Wallpaper__040634_.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+/* unvisited link */
+a:link {
+  color: #60401f;
+}
+
+/* visited link */
+a:visited {
+  color: purple;
+}
+
+/* mouse over link */
+a:hover {
+  color: green;
+}
+
+/* selected link */
+a:active {
+  color: red;
+}
+</style>
+</h:head>
+<body>
+<h1 style="text-align:center;font-size:90px;font-style: italic;color:#4d3319;">BookHour</h1>
+
+<h:form>
+<p:panelGrid id="grid" columns="1" style="text-align:center;margin:0px 42.5%;">
+
+<p:fieldset style="text-align:center;background-color:black;color:white">
+<h1 style="font-style: italic; font-family:courier; font-size:45px;">Login</h1>
+
+<p:outputLabel for="eml" value="E-mail:" /><br/>
+<p:inputText id="eml" type="email" value="#{cadastro.email}" autocomplete="off" style="text-align:center;">
+<f:validateRequired/>
+<f:validator validatorId="emailValidator"/>
+</p:inputText> 
+<br/>
+<p:message for="eml" display="email"/>
+<br/>
+
+<p:outputLabel for="snh" value="Senha:" /><br/>
+<p:password id="snh" type="text" value="#{cadastro.senha}" maxlength="10" style="text-align:center;">
+<f:validateRequired/>
+<f:validateLength minimum="6" />
+</p:password>
+<br/>
+<p:message for="snh" display="senha"/>
+<br/>
+
+<p:commandButton type="submit" value="Entrar" update="grid" action="Perfil"/>
+<br/>
+
+<p><b><a href="Cadastro.xhtml">Cadastrar-se</a></b></p>
+</p:fieldset>
+</p:panelGrid>
+</h:form>
+
+</body>
+</html>

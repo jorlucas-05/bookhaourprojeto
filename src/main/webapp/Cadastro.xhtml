@@ -1,0 +1,306 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Tela de Cadastro</title>
+<style>
+body {
+  background-image: url("https://on-desktop.com/wps/Creative_Wallpaper__040634_.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+</h:head>
+<body>
+<h1 style="text-align:center;font-size:80px;font-style: italic;color:#4d2d00;">BookHour</h1>
+<h:form>
+<p:panelGrid id="grid" columns="3" style="margin:0px 33%;">
+
+<p:fieldset style="background-color:black; color:white">
+<h1 style="text-align:center;font-size:60px;font-style: italic;font-family:courier;">Cadastro</h1>
+
+<p:outputLabel for="ndu" value="Nome de usuario:" />
+<p:inputText id="ndu" type="text" name="Nome de usuario" value="#{cadastro.nomedeusuario}" autocomplete="on" required="true">
+<f:validateRequired/> 
+</p:inputText>
+<br/>
+<p:message for="ndu" display="nomedeusuario"/>
+<br/>
+
+<p:outputLabel for="snh" value="Senha:" />
+<p:password id="snh" type="text" value="#{cadastro.senha}" match="csnh" required="true" feedback="true" maxlength="15">
+<f:validateRequired/>
+<f:validateLength minimum="6"/>
+</p:password>
+<br/>
+<p:message for="snh" display="senha"/>
+<br/>
+
+<p:outputLabel for="csnh" value="Confirmar senha:" />
+<p:password id="csnh"  type="text" value="#{cadastro.confirmarsenha}" required="true" maxlength="15">
+<f:validateRequired/>
+<f:validateLength minimum="6"/>
+</p:password>
+<br/>
+<p:message for="csnh" display="confirmarsenha"/>
+<br/>
+
+<p:outputLabel for="eml" value="E-mail:" />
+<p:inputText id="eml" type="email" value="#{cadastro.email}" size="35" autocomplete="off" required="true">
+<f:validateRequired/>
+<f:validator validatorId="emailValidator"/>
+</p:inputText>
+<br/>
+<p:message for="eml" display="email"/>
+<br/> 
+
+<p:outputLabel value="Cidade:" />
+<p:selectOneMenu id="cidade" type="text" name="Cidade" value="#{cadastro.cidade}">
+<f:selectItem itemLabel="NAO INFORMADO" itemValue=""/>
+<f:selectItem itemLabel="Abreu e Lima" itemValue="Abreu e Lima"/>
+<f:selectItem itemLabel="Afogados da Ingazeira" itemValue="Afogados da Ingazeira"/>
+<f:selectItem itemLabel="Afranio" itemValue="Afranio"/>
+<f:selectItem itemLabel="Agrestina" itemValue="Agrestina"/>
+<f:selectItem itemLabel="Agua Preta" itemValue="Agua Preta"/>
+<f:selectItem itemLabel="Aguas Belas" itemValue="Aguas Belas"/>
+<f:selectItem itemLabel="Alagoinha" itemValue="Alagoinha"/>
+<f:selectItem itemLabel="Alianca" itemValue="Alianca"/>
+<f:selectItem itemLabel="Altinho" itemValue="Altinho"/>
+<f:selectItem itemLabel="Amaraji" itemValue="Amaraji"/>
+<f:selectItem itemLabel="Angelim" itemValue="Angelim"/>
+<f:selectItem itemLabel="Aracoiaba" itemValue="Aracoiaba"/>
+<f:selectItem itemLabel="Araripina" itemValue="Araripina"/>
+<f:selectItem itemLabel="Arcoverde" itemValue="Arcoverde"/>
+<f:selectItem itemLabel="Barra de Guabiraba" itemValue="Barra de Guabiraba"/>
+<f:selectItem itemLabel="Barreiros" itemValue="Barreiros"/>
+<f:selectItem itemLabel="Belem de Maria" itemValue="Belem de Maria"/>
+<f:selectItem itemLabel="Belem de Sao Francisco" itemValue="Belem de Sao Francisco"/>
+<f:selectItem itemLabel="Belo Jardim" itemValue="Belo Jardim"/>
+<f:selectItem itemLabel="Betania" itemValue="Betania"/>
+<f:selectItem itemLabel="Bezerros" itemValue="Bezerros"/>
+<f:selectItem itemLabel="Bodoco" itemValue="Bodoco"/>
+<f:selectItem itemLabel="Bom Conselho" itemValue="Bom Conselho"/>
+<f:selectItem itemLabel="Bom Jardim" itemValue="Bom Jardim"/>
+<f:selectItem itemLabel="Bonito" itemValue="Bonito"/>
+<f:selectItem itemLabel="Brejao" itemValue="Brejao"/>
+<f:selectItem itemLabel="Brejinho" itemValue="Brejinho"/>
+<f:selectItem itemLabel="Brejo da Madre de Deus" itemValue="Brejo da Madre de Deus"/>
+<f:selectItem itemLabel="Buenos Aires" itemValue="Buenos Aires"/>
+<f:selectItem itemLabel="Buique" itemValue="Buique"/>
+<f:selectItem itemLabel="Cabo de Santo Agostinho" itemValue="Cabo de Santo Agostinho"/>
+<f:selectItem itemLabel="Cabrobo" itemValue="Cabrobo"/>
+<f:selectItem itemLabel="Cachoeirinha" itemValue="Cachoeirinha"/>
+<f:selectItem itemLabel="Caetes" itemValue="Caetes"/>
+<f:selectItem itemLabel="Calcado" itemValue="Calcado"/>
+<f:selectItem itemLabel="Calumbi" itemValue="Calumbi"/>
+<f:selectItem itemLabel="Camaragibe" itemValue="Camaragibe"/>
+<f:selectItem itemLabel="Camocim de Sao Felix" itemValue="Camocim de Sao Felix"/>
+<f:selectItem itemLabel="Camutanga" itemValue="Camutanga"/>
+<f:selectItem itemLabel="Canhotinho" itemValue="Canhotinho"/>
+<f:selectItem itemLabel="Capoeiras" itemValue="Capoeiras"/>
+<f:selectItem itemLabel="Carnaiba" itemValue="Carnaiba"/>
+<f:selectItem itemLabel="Carnaubeira da Penha" itemValue="Carnaubeira da Penha"/>
+<f:selectItem itemLabel="Carpina" itemValue="Carpina"/>
+<f:selectItem itemLabel="Caruaru" itemValue="Caruaru"/>
+<f:selectItem itemLabel="Casinhas" itemValue="Casinhas"/>
+<f:selectItem itemLabel="Catende" itemValue="Catende"/>
+<f:selectItem itemLabel="Cedros" itemValue="Cedros"/>
+<f:selectItem itemLabel="Cha Grande" itemValue="Cha Grande"/>
+<f:selectItem itemLabel="Cha de Alegria" itemValue="Cha de Alegria"/>
+<f:selectItem itemLabel="Condado" itemValue="Condado"/>
+<f:selectItem itemLabel="Correntes" itemValue="Correntes"/>
+<f:selectItem itemLabel="Cortes" itemValue="Cortes"/>
+<f:selectItem itemLabel="Cumaru" itemValue="Cumaru"/>
+<f:selectItem itemLabel="Cupira" itemValue="Cupira"/>
+<f:selectItem itemLabel="Custodia" itemValue="Custodia"/>
+<f:selectItem itemLabel="Dormentes" itemValue="Dormentes"/>
+<f:selectItem itemLabel="Escada" itemValue="Escada"/>
+<f:selectItem itemLabel="Exu" itemValue="Exu"/>
+<f:selectItem itemLabel="Feira Nova" itemValue="Feira Nova"/>
+<f:selectItem itemLabel="Ferreiros" itemValue="Ferreiros"/>
+<f:selectItem itemLabel="Flores" itemValue="Flores"/>
+<f:selectItem itemLabel="Floresta" itemValue="Floresta"/>
+<f:selectItem itemLabel="Frei Miguelinho" itemValue="Frei Miguelinho"/>
+<f:selectItem itemLabel="Gameleira" itemValue="Gameleira"/>
+<f:selectItem itemLabel="Garanhuns" itemValue="Garanhuns"/>
+<f:selectItem itemLabel="Gloria do Goita" itemValue="Gloria do Goita"/>
+<f:selectItem itemLabel="Goiana" itemValue="Goiana"/>
+<f:selectItem itemLabel="Granito" itemValue="Granito"/>
+<f:selectItem itemLabel="Gravata" itemValue="Gravata"/>
+<f:selectItem itemLabel="Iati" itemValue="Iati"/>
+<f:selectItem itemLabel="Ibimirim" itemValue="Ibimirim"/>
+<f:selectItem itemLabel="Ibirajuba" itemValue="Ibirajuba"/>
+<f:selectItem itemLabel="Igarassu" itemValue="Igarassu"/>
+<f:selectItem itemLabel="Iguaraci" itemValue="Iguaraci"/>
+<f:selectItem itemLabel="Ingazeira" itemValue="Ingazeira"/>
+<f:selectItem itemLabel="Ipojuca" itemValue="Ipojuca"/>
+<f:selectItem itemLabel="Ipubi" itemValue="Ipubi"/>
+<f:selectItem itemLabel="Itacuruba" itemValue="Itacuruba"/>
+<f:selectItem itemLabel="Itaiba" itemValue="Itaiba"/>
+<f:selectItem itemLabel="Itamaraca" itemValue="Itamaraca"/>
+<f:selectItem itemLabel="Itambe" itemValue="Itambe"/>
+<f:selectItem itemLabel="Itapetim" itemValue="Itapetim"/>
+<f:selectItem itemLabel="Itapissuma" itemValue="Itapissuma"/>
+<f:selectItem itemLabel="Itaquitinga" itemValue="Itaquitinga"/>
+<f:selectItem itemLabel="Jaboatao dos Guararapes" itemValue="Jaboatao dos Guararapes"/>
+<f:selectItem itemLabel="Jaqueira" itemValue="Jaqueira"/>
+<f:selectItem itemLabel="Jatauba" itemValue="Jatauba"/>
+<f:selectItem itemLabel="Jatoba" itemValue="Jatoba"/>
+<f:selectItem itemLabel="Joao Alfredo" itemValue="Joao Alfredo"/>
+<f:selectItem itemLabel="Joaquim Nabuco" itemValue="Joaquim Nabuco"/>
+<f:selectItem itemLabel="Jucati" itemValue="Jucati"/>
+<f:selectItem itemLabel="Jupi" itemValue="Jupi"/>
+<f:selectItem itemLabel="Jurema" itemValue="Jurema"/>
+<f:selectItem itemLabel="Lagoa Grande" itemValue="Lagoa Grande"/>
+<f:selectItem itemLabel="Lagoa do Carro" itemValue="Lagoa do Carro"/>
+<f:selectItem itemLabel="Lagoa do Itaenga" itemValue="Lagoa do Itaenga"/>
+<f:selectItem itemLabel="Lagoa do Ouro" itemValue="Lagoa do Ouro"/>
+<f:selectItem itemLabel="Lagoa dos Gatos" itemValue="Lagoa dos Gatos"/>
+<f:selectItem itemLabel="Lajedo" itemValue="Lajedo"/>
+<f:selectItem itemLabel="Limoeiro" itemValue="Limoeiro"/>
+<f:selectItem itemLabel="Macaparana" itemValue="Macaparana"/>
+<f:selectItem itemLabel="Machados" itemValue="Machados"/>
+<f:selectItem itemLabel="Manari" itemValue="Manari"/>
+<f:selectItem itemLabel="Maraial" itemValue="Maraial"/>
+<f:selectItem itemLabel="Mirandiba" itemValue="Mirandiba"/>
+<f:selectItem itemLabel="Moreilandia" itemValue="Moreilandia"/>
+<f:selectItem itemLabel="Moreno" itemValue="Moreno"/>
+<f:selectItem itemLabel="Nazare da Mata" itemValue="Nazare da Mata"/>
+<f:selectItem itemLabel="Olinda" itemValue="Olinda"/>
+<f:selectItem itemLabel="Orobo" itemValue="Orobo"/>
+<f:selectItem itemLabel="Oroco" itemValue="Oroco"/>
+<f:selectItem itemLabel="Ouricuri" itemValue="Ouricuri"/>
+<f:selectItem itemLabel="Palmares" itemValue="Palmares"/>
+<f:selectItem itemLabel="Palmeirina" itemValue="Palmeirina"/>
+<f:selectItem itemLabel="Panelas" itemValue="Panelas"/>
+<f:selectItem itemLabel="Paranatama" itemValue="Paranatama"/>
+<f:selectItem itemLabel="Parnamirim" itemValue="Parnamirim"/>
+<f:selectItem itemLabel="Passira" itemValue="Passira"/>
+<f:selectItem itemLabel="Paudalho" itemValue="Paudalho"/>
+<f:selectItem itemLabel="Paulista" itemValue="Paulista"/>
+<f:selectItem itemLabel="Pedra" itemValue="Pedra"/>
+<f:selectItem itemLabel="Pesqueira" itemValue="Pesqueira"/>
+<f:selectItem itemLabel="Petrolandia" itemValue="Petrolandia"/>
+<f:selectItem itemLabel="Petrolina" itemValue="Petrolina"/>
+<f:selectItem itemLabel="Pocao" itemValue="Pocao"/>
+<f:selectItem itemLabel="Pombos" itemValue="Pombos"/>
+<f:selectItem itemLabel="Primavera" itemValue="Primavera"/>
+<f:selectItem itemLabel="Quipapa" itemValue="Quipapa"/>
+<f:selectItem itemLabel="Quixaba" itemValue="Quixaba"/>
+<f:selectItem itemLabel="Recife" itemValue="Recife"/>
+<f:selectItem itemLabel="Riacho das Almas" itemValue="Riacho das Almas"/>
+<f:selectItem itemLabel="Ribeirao" itemValue="Ribeirao"/>
+<f:selectItem itemLabel="Rio Formoso" itemValue="Rio Formoso"/>
+<f:selectItem itemLabel="Saire" itemValue="Saire"/>
+<f:selectItem itemLabel="Salgadinho" itemValue="Salgadinho"/>
+<f:selectItem itemLabel="Salgueiro" itemValue="Salgueiro"/>
+<f:selectItem itemLabel="Saloa" itemValue="Saloa"/>
+<f:selectItem itemLabel="Sanharo" itemValue="Sanharo"/>
+<f:selectItem itemLabel="Santa Cruz da baixa Verde" itemValue="Santa Cruz da baixa Verde"/>
+<f:selectItem itemLabel="Santa Cruz do Capibaribe" itemValue="Santa Cruz do Capibaribe"/>
+<f:selectItem itemLabel="Santa Cruz" itemValue="Santa Cruz"/>
+<f:selectItem itemLabel="Santa Filomena" itemValue="Santa Filomena"/>
+<f:selectItem itemLabel="Santa Maria da Boa Vista" itemValue="Santa Maria da Boa Vista"/>
+<f:selectItem itemLabel="Santa Maria do Cambuca" itemValue="Santa Maria do Cambuca"/>
+<f:selectItem itemLabel="Santa Terezinha" itemValue="Santa Terezinha"/>
+<f:selectItem itemLabel="Sao Benedito do Sul" itemValue="Sao Benedito do Sul"/>
+<f:selectItem itemLabel="Sao Bento do Una" itemValue="Sao Bento do Una"/>
+<f:selectItem itemLabel="Sao Caitano" itemValue="Sao Caitano"/>
+<f:selectItem itemLabel="Sao Joao" itemValue="Sao Joao"/>
+<f:selectItem itemLabel="Sao Joaquim do Monte" itemValue="Sao Joaquim do Monte"/>
+<f:selectItem itemLabel="Sao Jose da Coroa Grande" itemValue="Sao Jose da Coroa Grande"/>
+<f:selectItem itemLabel="Sao Jose do Belmonte" itemValue="Sao Jose do Belmonte"/>
+<f:selectItem itemLabel="Sao Jose do Egito" itemValue="Sao Jose do Egito"/>
+<f:selectItem itemLabel="Sao Lourenco da Mata" itemValue="Sao Lourenco da Mata"/>
+<f:selectItem itemLabel="Sao Vicente Ferrer" itemValue="Sao Vicente Ferrer"/>
+<f:selectItem itemLabel="Serra Talhada" itemValue="Serra Talhada"/>
+<f:selectItem itemLabel="Serrita" itemValue="Serrita"/>
+<f:selectItem itemLabel="Sertania" itemValue="Sertania"/>
+<f:selectItem itemLabel="Sirinhaem" itemValue="Sirinhaem"/>
+<f:selectItem itemLabel="Solidao" itemValue="Solidao"/>
+<f:selectItem itemLabel="Surubim" itemValue="Surubim"/>
+<f:selectItem itemLabel="Tabira" itemValue="Tabira"/>
+<f:selectItem itemLabel="Tacaimbo" itemValue="Tacaimbo"/>
+<f:selectItem itemLabel="Tacaratu" itemValue="Tacaratu"/>
+<f:selectItem itemLabel="Tamandare" itemValue="Tamandare"/>
+<f:selectItem itemLabel="Taquaritinga do Norte" itemValue="Taquaritinga do Norte"/>
+<f:selectItem itemLabel="Terezinha" itemValue="Terezinha"/>
+<f:selectItem itemLabel="Terra Nova" itemValue="Terra Nova"/>
+<f:selectItem itemLabel="Timbauba" itemValue="Timbauba"/>
+<f:selectItem itemLabel="Toritama" itemValue="Toritama"/>
+<f:selectItem itemLabel="Tracunhaem" itemValue="Tracunhaem"/>
+<f:selectItem itemLabel="Trindade" itemValue="Trindade"/>
+<f:selectItem itemLabel="Triunfo" itemValue="Triunfo"/>
+<f:selectItem itemLabel="Tupanatinga" itemValue="Tupanatinga"/>
+<f:selectItem itemLabel="Tuparetama" itemValue="Tuparetama"/>
+<f:selectItem itemLabel="Venturosa" itemValue="Venturosa"/>
+<f:selectItem itemLabel="Verdejante" itemValue="Verdejante"/>
+<f:selectItem itemLabel="Vertente do Lerio" itemValue="Vertente do Lerio"/>
+<f:selectItem itemLabel="Vertentes" itemValue="Vertentes"/>
+<f:selectItem itemLabel="Vicencia" itemValue="Vicencia"/>
+<f:selectItem itemLabel="Vitoria de Santo Antao" itemValue="Vitoria de Santo Antao"/>
+<f:selectItem itemLabel="Xexeu" itemValue="Xexeu"/>
+<f:validateRequired/>
+</p:selectOneMenu>
+<p:outputLabel value="Estado:" />
+<p:selectOneMenu id="estado" type="text" name="Estado" value="#{cadastro.estado}" maxlength="2" size="2">
+<f:selectItem itemLabel="N I" itemValue=""/>
+<f:selectItem itemLabel="PE" itemValue="PE"/>
+<f:validateRequired/>
+</p:selectOneMenu>
+<p:outputLabel value="Pais:" />
+<p:selectOneMenu id="Pais" type="text" name="Pais" value="#{cadastro.pais}" maxlength="2" size="2">
+<f:selectItem itemLabel="N I" itemValue=""/>
+<f:selectItem itemLabel="BR" itemValue="BR"/>
+<f:validateRequired/>
+</p:selectOneMenu>
+<br/>
+<br/>
+
+<p:outputLabel value="DDD:" />
+<p:inputText id="celular" type="text" name="Celular" value="#{cadastro.numero2}" maxlength="2" size="2">
+<f:convertNumber pattern="0.00"/>
+</p:inputText>
+<p:outputLabel value="Celular:" />
+<p:inputText id="celular1" type="text" name="Celular" value="#{cadastro.numero}" maxlength="8" size="8">
+<f:convertNumber pattern="0.00"/>
+</p:inputText>
+<br/>
+<br/>
+
+<p:outputLabel for="german" value="Data de nascimento:"/>
+<p:calendar id="german" value="#{cadastro.datadenascimento}" locale="de" navigator="true" pattern="dd-MMM-yyy"/>
+<br/>
+<br/>
+
+<p:outputLabel value="Estado civil:"/>
+<p:selectOneMenu id="estadocivil" value="#{cadastro.estadocivil}" size="1" >
+<f:selectItem itemLabel="NAO INFORMADO" itemValue=""/>
+<f:selectItem itemLabel="SOLTEIRO(A)" itemValue="SOLTEIRO(A)"/>
+<f:selectItem itemLabel="CASADO(A)" itemValue="CASADO(A)"/>
+<f:selectItem itemLabel="NAMORANDO" itemValue="NAMORANDO"/>
+</p:selectOneMenu>
+<br/>
+<br/>
+    
+<p:outputLabel value="Sexo:"/>
+<p:selectOneMenu id="sexo" value="#{cadastro.sexo}" size="1" >
+<f:selectItem itemLabel="NAO INFORMADO" itemValue=""/>
+<f:selectItem itemLabel="FEMININO" itemValue="FEMININO"/>
+<f:selectItem itemLabel="MASCULINO" itemValue="MASCULINO"/>
+</p:selectOneMenu>
+<br/>
+<br/>
+
+<p:commandButton type="submit" value="Cadastrar" update="grid" action="#{cadastro.salvarCadastro(cadastro)}" />
+
+</p:fieldset>
+</p:panelGrid>
+</h:form>
+
+</body>
+</html>
